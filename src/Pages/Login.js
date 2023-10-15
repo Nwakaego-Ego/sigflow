@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaGoogle, FaGithub } from "react-icons/fa";
+import { FaEyeSlash, FaEye } from "react-icons/fa";
 import { Formik, Form, Field, ErrorMessage } from "formik";
+
 import * as Yup from "yup";
 
 const Login = () => {
+  const [open, setOpen] = useState(false);
+
+  const toggle = () => {
+    setOpen(!open);
+  };
+
   const initialValues = {
     email: "",
     password: "",
@@ -27,7 +35,9 @@ const Login = () => {
 
   return (
     <>
-      <h1 className="p-6 text-greenColor font-semibold text-[20px]">Sigflow</h1>
+      <h1 className="p-6 text-greenColor font-semibold text-[20px]   w-[90.22px] h-[25.73px] top-[53px] left-[30px]">
+        Sigflow
+      </h1>
       <div className="max-w-md mx-auto p-4 bg-white shadow-md rounded-lg mt-10 border border-borderColor">
         <h2 className="text-2xl font-semibold text-center text-[24px] text-blackColor">
           Welcome back!
@@ -61,7 +71,49 @@ const Login = () => {
                   className="text-red-600"
                 />
               </div>
+
               <div className="mb-6">
+                {/* <div className="flex flex-row justify-between">
+                  <label htmlFor="password" className="text-gray-700">
+                    Password
+                  </label>
+                  <label htmlFor="password" className="text-skyblueEgo">
+                    Forget password
+                  </label>
+                </div> */}
+                <label
+                  htmlFor="password"
+                  className="block text-blackColor text-[12px] text-sm font-semibold mb-2"
+                >
+                  Password
+                </label>
+                <Field
+                  type={open ? "text" : "password"}
+                  id="password"
+                  name="password"
+                  className="block  border bg-gray-100 border-gray-300 focus:outline-none focus-border-skyblueEgo my-4 h-10 pl-5 w-5/6 lg:w-full px-4 py-2 rounded-lg" // Add styling here
+                  placeholder="Enter your password"
+                />
+                <ErrorMessage
+                  name="password"
+                  component="div"
+                  className="text-red-600 text-sm font-semibold"
+                />{" "}
+                {/* Add styling here */}
+              </div>
+              {open ? (
+                <FaEye
+                  className="h-6 w-6 text-gray-500 text-2xl cursor-pointer mr-10"
+                  onClick={toggle}
+                />
+              ) : (
+                <FaEyeSlash
+                  className="h-6 w-6 text-gray-500 text-2xl cursor-pointer mr-10"
+                  onClick={toggle}
+                />
+              )}
+
+              {/* <div className="mb-6">
                 <label
                   htmlFor="password"
                   className="block text-blackColor text-[12px] text-sm font-semibold mb-2"
@@ -79,7 +131,8 @@ const Login = () => {
                   component="div"
                   className="text-red-600"
                 />
-              </div>
+              </div> */}
+
               <div>
                 <button
                   type="submit"
