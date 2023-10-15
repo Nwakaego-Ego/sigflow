@@ -1,4 +1,5 @@
 import React from "react";
+import { FaGoogle, FaGithub } from "react-icons/fa";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 
@@ -26,8 +27,8 @@ const Login = () => {
 
   return (
     <>
-      <h1 className="p-6">Sigflow</h1>
-      <div className="max-w-md mx-auto p-4 bg-white shadow-md rounded-lg mt-14 border border-borderColor">
+      <h1 className="p-6 text-greenColor font-semibold text-[20px]">Sigflow</h1>
+      <div className="max-w-md mx-auto p-4 bg-white shadow-md rounded-lg mt-10 border border-borderColor">
         <h2 className="text-2xl font-semibold text-center text-[24px] text-blackColor">
           Welcome back!
         </h2>
@@ -90,25 +91,48 @@ const Login = () => {
             </Form>
           )}
         </Formik>
-        <div className="text-center ">
+        <div className="text-center">
           <div className="m-2 text-grayColor text-[16px]">OR</div>
-          <button className="w-[120px] text-[13px] h-8 rounded-[8px] border border-gray-300 mr-4 mb-4">
-            Sign in with Github
-          </button>
-          <button className="w-[120px] text-[13px] h-8 rounded-[8px] border border-gray-300">
-            Sign in with Google
-          </button>
+          <div className="inline-flex">
+            <button className="w-[150px] text-[13px] h-8 rounded-[8px] border border-gray-300 mr-4 mb-4 flex items-center">
+              Sign in with Github{" "}
+              <FaGithub size={24} className="m-1 text-blackColor" />
+            </button>
+            <button className="w-[150px] text-[13px] h-8 rounded-[8px] border border-gray-300 mr-4 mb-4 flex items-center">
+              Sign in with Google{" "}
+              <FaGoogle size={24} color="blue" className="m-1" />
+            </button>
+          </div>
           <div>
-            {" "}
             <button className="w-[120px] text-[13px] h-8 rounded-[8px] border border-gray-300">
-              Sign in with Google
+              Sign in with SSO
             </button>
           </div>
         </div>
+
+        {/* <div className="text-center ">
+          <div className="m-2 text-grayColor text-[16px]">OR</div>
+
+          <button className="w-[150px] text-[13px] h-8 rounded-[8px] border border-gray-300 mr-4 mb-4 flex items-center">
+            Sign in with Github{" "}
+            <FaGithub size={24} color="blue" className="m-1" />
+          </button>
+          <button className="w-[150px] text-[13px] h-8 rounded-[8px] border border-gray-300 mr-4 mb-4 flex items-center">
+            Sign in with Google{" "}
+            <FaGoogle size={24} color="blue" className="m-1" />
+          </button>
+
+          <div>
+            {" "}
+            <button className="w-[120px] text-[13px] h-8 rounded-[8px] border border-gray-300">
+              Sign in with SSO
+            </button>
+          </div>
+        </div> */}
       </div>
       <div className="text-center text-[12px]">
         {" "}
-        Dont have an account? sign in
+        Dont have an account? <span className="text-greenColor">sign in</span>
       </div>
     </>
   );
