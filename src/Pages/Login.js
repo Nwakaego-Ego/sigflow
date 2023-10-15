@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { FaGoogle, FaGithub } from "react-icons/fa";
-import { FaEyeSlash, FaEye } from "react-icons/fa";
+import { FaEyeSlash, FaEye, FaKey } from "react-icons/fa";
 import { Formik, Form, Field, ErrorMessage } from "formik";
-
 import * as Yup from "yup";
 
 const Login = () => {
@@ -55,7 +54,7 @@ const Login = () => {
               <div className="mb-4">
                 <label
                   htmlFor="email"
-                  className="block text-sm font-semibold mb-2 text-blackColor text-[12px]"
+                  className="block text-sm  mb-2 text-blackColor text-[12px]"
                 >
                   Email
                 </label>
@@ -72,66 +71,41 @@ const Login = () => {
                 />
               </div>
 
-              <div className="mb-6">
-                {/* <div className="flex flex-row justify-between">
-                  <label htmlFor="password" className="text-gray-700">
-                    Password
-                  </label>
-                  <label htmlFor="password" className="text-skyblueEgo">
-                    Forget password
-                  </label>
-                </div> */}
+              <div className="mb-6 relative">
                 <label
                   htmlFor="password"
-                  className="block text-blackColor text-[12px] text-sm font-semibold mb-2"
+                  className="block text-blackColor text-[12px] text-sm mb-2  "
                 >
                   Password
                 </label>
-                <Field
-                  type={open ? "text" : "password"}
-                  id="password"
-                  name="password"
-                  className="block  border bg-gray-100 border-gray-300 focus:outline-none focus-border-skyblueEgo my-4 h-10 pl-5 w-5/6 lg:w-full px-4 py-2 rounded-lg" // Add styling here
-                  placeholder="Enter your password"
-                />
+                <div className="relative">
+                  <Field
+                    type={open ? "text" : "password"}
+                    id="password"
+                    name="password"
+                    className="block border border-gray-300 my-4 h-10 pl-5 w-5/6 lg:w-full px-4 py-2 rounded-lg pr-10"
+                  />
+                  {open ? (
+                    <FaEye
+                      className="h-6 w-6 text-gray-500 text-2xl cursor-pointer absolute top-1/2 transform -translate-y-1/2 right-2"
+                      onClick={toggle}
+                    />
+                  ) : (
+                    <FaEyeSlash
+                      className="h-6 w-6 text-gray-500 text-2xl cursor-pointer absolute top-1/2 transform -translate-y-1/2 right-2"
+                      onClick={toggle}
+                    />
+                  )}
+                </div>
                 <ErrorMessage
                   name="password"
                   component="div"
                   className="text-red-600 text-sm font-semibold"
-                />{" "}
-                {/* Add styling here */}
+                />
+                <p className=" relative bottom-2 text-red-600  text-[12px]">
+                  Forget password ?
+                </p>
               </div>
-              {open ? (
-                <FaEye
-                  className="h-6 w-6 text-gray-500 text-2xl cursor-pointer mr-10"
-                  onClick={toggle}
-                />
-              ) : (
-                <FaEyeSlash
-                  className="h-6 w-6 text-gray-500 text-2xl cursor-pointer mr-10"
-                  onClick={toggle}
-                />
-              )}
-
-              {/* <div className="mb-6">
-                <label
-                  htmlFor="password"
-                  className="block text-blackColor text-[12px] text-sm font-semibold mb-2"
-                >
-                  Password
-                </label>
-                <Field
-                  type="password"
-                  id="password"
-                  name="password"
-                  className="w-full px-4 py-2 border rounded-lg"
-                />
-                <ErrorMessage
-                  name="password"
-                  component="div"
-                  className="text-red-600"
-                />
-              </div> */}
 
               <div>
                 <button
@@ -156,36 +130,20 @@ const Login = () => {
               <FaGoogle size={24} color="blue" className="m-1" />
             </button>
           </div>
-          <div>
-            <button className="w-[120px] text-[13px] h-8 rounded-[8px] border border-gray-300">
-              Sign in with SSO
+          <div className="flex justify-center">
+            <button className="w-[150px] text-[13px] h-8 rounded-[8px] border border-gray-300 flex items-center">
+              Sign in with Key{" "}
+              <FaKey size={24} className="m-1 text-greenColor" />
             </button>
           </div>
         </div>
-
-        {/* <div className="text-center ">
-          <div className="m-2 text-grayColor text-[16px]">OR</div>
-
-          <button className="w-[150px] text-[13px] h-8 rounded-[8px] border border-gray-300 mr-4 mb-4 flex items-center">
-            Sign in with Github{" "}
-            <FaGithub size={24} color="blue" className="m-1" />
-          </button>
-          <button className="w-[150px] text-[13px] h-8 rounded-[8px] border border-gray-300 mr-4 mb-4 flex items-center">
-            Sign in with Google{" "}
-            <FaGoogle size={24} color="blue" className="m-1" />
-          </button>
-
-          <div>
-            {" "}
-            <button className="w-[120px] text-[13px] h-8 rounded-[8px] border border-gray-300">
-              Sign in with SSO
-            </button>
-          </div>
-        </div> */}
       </div>
       <div className="text-center text-[12px]">
         {" "}
-        Dont have an account? <span className="text-greenColor">sign in</span>
+        Dont have an account?{" "}
+        <span className="text-greenColor text-center text-[12px] leading-[20px]">
+          sign in
+        </span>
       </div>
     </>
   );
