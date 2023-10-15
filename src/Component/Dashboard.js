@@ -3,6 +3,8 @@ import Event from "./Figma/Event";
 import Search from "./Figma/Search";
 import Hug from "./Figma/Hug";
 import Source from "./Figma/Source";
+import Dot from "./Figma/Dot";
+import "./Dashboard.css";
 
 const Dashboard = () => {
   return (
@@ -51,22 +53,128 @@ const Dashboard = () => {
         <Hug />
         <p>Pipeline</p>
       </div>
-      <div class="grid grid-cols-4 gap-1">
-        <div class="col-span-1 p-2 ">source</div>
-        <div class="col-span-1 p-2 ">name</div>
-        <div class="col-span-1 p-2 ">creation date</div>
-        <div class="col-span-1 p-2 ">status</div>
+
+      <div className="grid grid-cols-5 gap-1 ">
+        <div className="col-span-1 p-2">
+          <div classNmae="flex items-center">
+            <div className="mr-2">
+              <Source className="ml-2" />
+            </div>
+            destination
+          </div>
+        </div>
+        <div className="col-span-1 p-2 border-b border-gray-300">
+          gotham assylum
+        </div>
+
+        <div className="col-span-1 p-2  border-b border-gray-300">
+          <button className="bg-blue-500 text-white p-2 rounded border-b border-gray-300">
+            Pause
+          </button>
+        </div>
+        <div className="col-span-1 p-2 mt-2 border-b border-gray-300 mr-40">
+          <Dot className="ml-24" />
+        </div>
       </div>
 
-      <div class="grid grid-cols-6 gap-1">
-        <div class="col-span-1 p-2 ">destination</div>
-        <Source />
-        <div class="col-span-1 p-2 ">gotham assylum</div>
-        <div class="col-span-1 p-2 ">10th Aug 2023</div>
-        <div class="col-span-1 p-2 ">
-          <button class="bg-blue-500 text-white p-2 rounded">Pause</button>
+      <div className="grid grid-cols-5 gap-1 ">
+        <div className="col-span-1 p-2">
+          <div className="flex items-center">
+            <div className="mr-2">
+              <Source class="ml-2" />
+            </div>
+            destination
+          </div>
         </div>
-        <div class="col-span-1 p-2 ">rop</div>
+        <div className="col-span-1 p-2 border-b border-gray-300">
+          gotham assylum
+        </div>
+        <div className="col-span-1 p-2 border-b border-gray-300">
+          10th Aug 2023
+        </div>
+        <div className="col-span-1 p-2  border-b border-gray-300">
+          <button class="bg-blue-500 text-white p-2 rounded border-b border-gray-300">
+            Pause
+          </button>
+        </div>
+        <div classNmae="col-span-1 p-2 mt-2 border-b border-gray-300 mr-40">
+          <Dot className="ml-24" />
+        </div>
+      </div>
+
+      <div className="grid grid-cols-5 gap-1 ">
+        <div className="col-span-1 p-2">
+          <div className="flex items-center">
+            <div className="mr-2">
+              <Source class="ml-2" />
+            </div>
+            destination
+          </div>
+        </div>
+        <div className="col-span-1 p-2 border-b border-gray-300">
+          gotham assylum
+        </div>
+        <div className="col-span-1 p-2 border-b border-gray-300">
+          10th Aug 2023
+        </div>
+        <div className="col-span-1 p-2  border-b border-gray-300">
+          <button class="bg-blue-500 text-white p-2 rounded border-b border-gray-300">
+            Pause
+          </button>
+        </div>
+        <div classNmae="col-span-1 p-2 mt-2 border-b border-gray-300 mr-40">
+          <Dot className="ml-24" />
+        </div>
+      </div>
+
+      <div className="grid grid-cols-5 gap-1 ">
+        <div className="col-span-1 p-2">
+          <div className="flex items-center">
+            <div className="mr-2">
+              <Source class="ml-2" />
+            </div>
+            destination
+          </div>
+        </div>
+        <div className="col-span-1 p-2 border-b border-gray-300">
+          gotham assylum
+        </div>
+        <div className="col-span-1 p-2 border-b border-gray-300">
+          10th Aug 2023
+        </div>
+        <div className="col-span-1 p-2  border-b border-gray-300">
+          <button class="bg-blue-500 text-white p-2 rounded border-b border-gray-300">
+            Pause
+          </button>
+        </div>
+        <div classNmae="col-span-1 p-2 mt-2 border-b border-gray-300 mr-40">
+          <Dot className="ml-24" />
+        </div>
+      </div>
+
+      <div className="grid grid-cols-5 gap-1 ">
+        <div className="col-span-1 p-2">
+          <div className="flex items-center">
+            <div className="mr-2">
+              <Source class="ml-2" />
+            </div>
+            destination
+          </div>
+        </div>
+        <div className="col-span-1 p-2 border-b border-gray-300">
+          gotham assylum
+        </div>
+        <div className="col-span-1 p-2 border-b border-gray-300">
+          10th Aug 2023
+        </div>
+        <div className="col-span-1 p-2  border-b border-gray-300">
+          <button class="bg-blue-500 text-white p-2 rounded border-b border-gray-300">
+            Pause
+          </button>
+        </div>
+        <div classNmae="col-span-1 p-2 mt-2 border-b border-gray-300 mr-40">
+          <Dot className="ml-24" />
+        </div>
       </div>
     </>
   );
