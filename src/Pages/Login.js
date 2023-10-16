@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
-import { FaGoogle, FaGithub } from "react-icons/fa";
-import { FaEyeSlash, FaEye, FaKey } from "react-icons/fa";
-import { Formik, Form, Field, ErrorMessage } from "formik";
+
+import { FaEyeSlash, FaEye } from "react-icons/fa";
+import { Formik, Form, ErrorMessage } from "formik";
 import Google from "../Component/Figma/Google";
 import Github from "../Component/Figma/Github";
 import SSO from "../Component/Figma/SS0";
@@ -38,7 +38,7 @@ const Login = () => {
         navigate("/main");
       } else {
         const data = await response.json();
-        setMessage(data.message || "Invalid authentication");
+        setMessage("Invalid authentication");
       }
     } catch (error) {
       console.error("An error occurred:", error);
@@ -56,9 +56,8 @@ const Login = () => {
   };
 
   const schema = Yup.object().shape({
-    name: Yup.string().required("name cannot be empty"),
-    email: Yup.string().email().required("Email cannot be empty"),
-    password: Yup.string().required("password cannot be empty"),
+    email: Yup.string().email().required(),
+    password: Yup.string().required(),
   });
 
   return (
